@@ -1,7 +1,96 @@
-\Gramsco (le qoqo)
+by @gramsco
+
+Page 1
+[
+  "advent-of-code",
+  "another_test",
+  "codespaces-test",
+  "dashboard",
+  "data-exercices"
+]
+
+Page 2
+[
+  "dockerized-scrapper",
+  "donkeyisland",
+  "dontmove",
+  "easy-layout",
+  "fake-iphone-chat"
+]
+
+Page 3
+[
+  "fiddle",
+  "findsquare",
+  "fullApp",
+  "gatsby-simple-site",
+  "guided-exercise-mern-street-art"
+]
+
+Page 4
+[
+  "hackathon-ironhack",
+  "Keats",
+  "lab-advance-querying-mongo",
+  "lab-ajax-crud-characters",
+  "lab-canvas-flappybirds"
+]
+
+Page 5
+[
+  "lab-css-flexbox-slack",
+  "lab-css-instagram-clone",
+  "lab-css-recipes-clone",
+  "lab-css-spotify-clone",
+  "lab-dom-ironhack-cart"
+]
+
+Page 6
+[
+  "lab-dom-pizza-builder",
+  "lab-express-basic-site",
+  "lab-express-cinema",
+  "lab-file-upload",
+  "lab-intro-node"
+]
+
+Page 7
+[
+  "lab-javascript-advanced-algorithms",
+  "lab-javascript-basic-algorithms",
+  "lab-javascript-chronometer",
+  "lab-javascript-clue",
+  "lab-javascript-functions-and-arrays"
+]
+
+Page 8
+[
+  "lab-javascript-greatest-movies",
+  "lab-javascript-koans",
+  "lab-javascript-memory-game",
+  "lab-javascript-vikings",
+  "lab-mongoose-movies"
+]
+
+Page 9
+[
+  "lab-mongoose-recipes",
+  "lab-react-dev-squad-152",
+  "lab-react-hooks-ironcontacts",
+  "lab-react-ironbeers",
+  "lab-react-ironbook"
+]
+
+
+
+
+
+
+
+
+
+
+
 
 © 2020
 
-Nothing yet
-
-– –

@@ -1,24 +1,41 @@
 const fs = require("fs");
 const path = require("path");
+const keywords = require("./gramrc");
 
-const generate = (gramFile) => (newFile = null) => (keywords) => {
+fs.readFileSync("file.txt");
+
+async function getReplaceWith(entry) {
+  let isArray = Array.isArray(entry);
+  if (isArray) return entry.join("\n");
+
+  let isFn = typeof entry === "function";
+  if (isFn) {
+    let r = await entry();
+    return r;
+  } else return entry;
+}
+
+const generate = (gramFile) => (newFile = null) => async (keywords) => {
   let content = fs.readFileSync(path.join(__dirname, gramFile), "utf-8");
   for (let keyword in keywords) {
-    let newContent = content.replaceAll(
-      `\__${keyword}__/`,
-      keywords[keyword].join("\n")
-    );
+    let token = `=${keyword}=`;
+
+    let replaceWith = await getReplaceWith(keywords[keyword]);
+
+    let newContent = content.replaceAll(token, replaceWith);
+
     if (content === newContent) {
-      console.log(`Keyword "${keyword}" not found.`);
+      console.log(` => Keyword "${keyword}" not found.`);
     }
     content = newContent;
   }
   let newPath = newFile ?? gramFile.replace("gram", "txt");
   fs.writeFileSync(path.join(__dirname, newPath), content);
-  console.log(newPath + " generated");
+
+  console.log("\n" + content);
 };
 
-const genFile = generate("./file.gram")("./file.txt");
+const genFile = generate("./file.txt")("./file.txt");
 
 const vars = [
   ["test", 5],
@@ -27,14 +44,5 @@ const vars = [
 ].map((e) => `let ${e[0]} = ${e[1]}`);
 
 const imports = ["axios", "supermodule"].map((m) => `import ${m} from ${m}`);
-
-const gramsco = `Gramsco (le qoqo)\n`;
-const year = `© ${new Date().getFullYear()}\n`;
-const readme = "Nothing yet\n";
-const ending = "– –\n";
-
-const keywords = {
-  prez: [gramsco, year, readme, ending],
-};
 
 genFile(keywords);
